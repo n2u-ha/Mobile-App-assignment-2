@@ -30,8 +30,25 @@ class _DashboardState extends State<Dashboard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            Text("Welcome to", style: TextDesign().dashboardWidgetTitle),
-            Text("Chat META", style: TextDesign().popHead.copyWith(color: MyColor.primary, fontSize: 22)),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("Welcome to", style: TextDesign().dashboardWidgetTitle),
+                    Text("Chat META", style: TextDesign().popHead.copyWith(color: MyColor.primary, fontSize: 22)),
+                  ],
+                ),
+
+                if(selectedIndex == 2)
+                IconButton(
+                    onPressed: (){},
+                    icon: const Icon(Icons.logout)
+                )
+              ],
+            ),
             const SizedBox(height: 15,),
             Expanded(
               child: PageView(
@@ -41,10 +58,10 @@ class _DashboardState extends State<Dashboard> {
                     selectedIndex = value;
                   });
                 },
-                children: [
-                  const DiscoverPage(),
-                  const ChatsPage(),
-                  const ProfilePage(),
+                children: const [
+                  DiscoverPage(),
+                  ChatsPage(),
+                  ProfilePage(),
                 ],
               ),
             ),

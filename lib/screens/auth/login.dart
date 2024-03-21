@@ -72,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
                         const SizedBox(height: 20),
                         RoundedActionButton(
                             onClick: (){
+                              FocusScope.of(context).unfocus();
                               if(formKey.currentState!.validate())
                               {
                                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Dashboard()));

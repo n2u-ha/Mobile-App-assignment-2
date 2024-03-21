@@ -105,6 +105,7 @@ class _SignUpState extends State<SignUp> {
                       const SizedBox(height: 35),
                       RoundedActionButton(
                           onClick: (){
+                            FocusScope.of(context).unfocus();
                             if(formKey.currentState!.validate())
                               {
                                 Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Dashboard()));
