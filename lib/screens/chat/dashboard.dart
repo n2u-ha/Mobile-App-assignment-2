@@ -2,6 +2,7 @@ import 'package:chat_application_iub_cse464/const_config/color_config.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/chats.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/discover.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/profile.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flashy_tab_bar2/flashy_tab_bar2.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -44,7 +45,10 @@ class _DashboardState extends State<Dashboard> {
 
                 if(selectedIndex == 2)
                 IconButton(
-                    onPressed: (){},
+                    onPressed: (){
+                      final auth = FirebaseAuth.instance;
+                      auth.signOut();
+                    },
                     icon: const Icon(Icons.logout)
                 )
               ],

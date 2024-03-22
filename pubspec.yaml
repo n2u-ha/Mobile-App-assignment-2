@@ -40,9 +40,6 @@ dependencies:
   loading_animation_widget: ^1.2.0+2
   font_awesome_flutter: ^10.4.0
   google_fonts: ^4.0.3
-  dropdown_button2: ^2.3.9
-  lottie: ^1.0.1
-  percent_indicator: ^4.2.3
   cloud_firestore: ^4.0.4
   firebase_auth: ^4.1.1
   firebase_core: ^2.1.1
@@ -50,6 +47,7 @@ dependencies:
   firebase_app_check: ^0.2.1+12
   random_avatar: ^0.0.8
   flashy_tab_bar2: ^0.0.10
+  flutter_overlay_loader: ^2.0.0
 
 dev_dependencies:
   flutter_test:

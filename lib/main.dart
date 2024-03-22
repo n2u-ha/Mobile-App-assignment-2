@@ -1,10 +1,14 @@
 import 'package:chat_application_iub_cse464/const_config/color_config.dart';
 import 'package:chat_application_iub_cse464/screens/auth/sign_up.dart';
+import 'package:chat_application_iub_cse464/screens/chat/dashboard.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-void main() {
+void main() async{
   WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
   // Adding this line for fixing the app on portrait mode only.
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
@@ -27,9 +31,22 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: MyColor.primary),
         useMaterial3: true,
       ),
-      home:  const SignUp(),
+      home:  StreamBuilder(
+        stream: FirebaseAuth.instance.authStateChanges(),
+        builder: (context, AsyncSnapshot snapshot){
+          if(snapshot.hasData)
+            {
+              return const Dashboard();
+            }
+          else
+            {
+              return const SignUp();
+            }
+        },
+      )
     );
   }
 }
 
 
+/// firebase auth stream ---> listen...
