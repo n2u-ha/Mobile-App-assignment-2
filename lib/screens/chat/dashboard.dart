@@ -20,7 +20,7 @@ class Dashboard extends StatefulWidget {
 class _DashboardState extends State<Dashboard> {
   int selectedIndex = 1;
   final pageViewController = PageController(initialPage: 1);
-  final bootkey =GlobalKey();
+
 
   // @override
   // void initState() {
