@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:chat_application_iub_cse464/const_config/color_config.dart';
 import 'package:chat_application_iub_cse464/const_config/text_config.dart';
+import 'package:chat_application_iub_cse464/services/user_management_services.dart';
 import 'package:chat_application_iub_cse464/services/utils/helper_functions.dart';
 import 'package:chat_application_iub_cse464/services/utils/validators.dart';
 import 'package:chat_application_iub_cse464/widgets/custom_buttons/Rouded_Action_Button.dart';
@@ -127,6 +128,8 @@ class _SignUpState extends State<SignUp> {
                                     email: emailController.text.trim(),
                                     password: passwordController.text.trim()
                                 ).then((value) {
+                                  UserManage().createUserProfile(userName: usernameController.text, userEmail: emailController.text.trim(),userID: auth.currentUser!.uid);
+                                  Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const Dashboard()), (route) => false);
                                   if(value.user != null)
                                     {
                                       showSnackBar(

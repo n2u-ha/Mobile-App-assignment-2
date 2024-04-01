@@ -1,4 +1,5 @@
 import 'package:chat_application_iub_cse464/const_config/color_config.dart';
+import 'package:chat_application_iub_cse464/screens/auth/sign_up.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/chats.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/discover.dart';
 import 'package:chat_application_iub_cse464/screens/chat/chat_tabs/profile.dart';
@@ -18,8 +19,22 @@ class Dashboard extends StatefulWidget {
 
 class _DashboardState extends State<Dashboard> {
   int selectedIndex = 1;
-  final pageViewController = PageController();
+  final pageViewController = PageController(initialPage: 1);
   final bootkey =GlobalKey();
+
+  // @override
+  // void initState() {
+  //   // TODO: implement initState
+  //
+  //
+  //   /// This function runs after the widget is build....
+  //   WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+  //
+  //     pageViewController.jumpToPage(1);
+  //   });
+  //   super.initState();
+  // }
+
 
   @override
   Widget build(BuildContext context) {
@@ -48,6 +63,7 @@ class _DashboardState extends State<Dashboard> {
                     onPressed: (){
                       final auth = FirebaseAuth.instance;
                       auth.signOut();
+                      Navigator.of(context).pushAndRemoveUntil(MaterialPageRoute(builder: (context)=>const SignUp()), (route) => false);
                     },
                     icon: const Icon(Icons.logout)
                 )
