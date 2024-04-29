@@ -1,4 +1,3 @@
-import 'dart:developer';
 
 import 'package:chat_application_iub_cse464/const_config/color_config.dart';
 import 'package:chat_application_iub_cse464/const_config/text_config.dart';

@@ -1,4 +1,3 @@
-import 'package:chat_application_iub_cse464/const_config/text_config.dart';
 import 'package:chat_application_iub_cse464/widgets/custom_buttons/Rouded_Action_Button.dart';
 import 'package:chat_application_iub_cse464/widgets/input_widgets/simple_input_field.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -37,7 +36,7 @@ class _ChatsPageState extends State<ChatsPage> {
                               return Padding(
                                 padding: const EdgeInsets.all(2.0),
                                 child: Card(
-                                  color: Colors.white,
+                                  color: Color.fromARGB(255, 240, 9, 151),
                                   child: Padding(
                                   padding: const EdgeInsets.all(8.0),
                                   child: Text(snapshot.data.docs[index]['message']),

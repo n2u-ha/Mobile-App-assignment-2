@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "1085784541976",
-    "project_id": "chat-meta-35594",
-    "storage_bucket": "chat-meta-35594.appspot.com"
+    "project_number": "64945418729",
+    "project_id": "chat-app-9adb6",
+    "storage_bucket": "chat-app-9adb6.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:1085784541976:android:bc17d754aa5f903566ec6d",
+        "mobilesdk_app_id": "1:64945418729:android:94f2bced57fce7a9fe5b78",
         "android_client_info": {
-          "package_name": "com.example.chat_application_iub_cse464"
+          "package_name": "com.nuha.chatapp"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDslDE6KXEuLrH_z2HXB4A1KMNyYp8aBp4"
+          "current_key": "AIzaSyCpP_dJONa2H-Kgi0p8ROojdXqyW0eHyMg"
         }
       ],
       "services": {
